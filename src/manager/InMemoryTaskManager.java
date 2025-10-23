@@ -143,18 +143,29 @@ public class InMemoryTaskManager implements TaskManager {
         subtasks.clear();
     }
 
-    public Subtask createSubtask(Subtask s) {
-        int epicId = s.getEpicId();
-        if (!epics.containsKey(epicId)) return null;
-        if (s.getId() == epicId) return null;
-        int id = generateId();
-        s.setId(id);
-        subtasks.put(id, s);
-        Epic epic = epics.get(epicId);
-        epic.addSubtaskId(id);
-        recalcEpicStatus(epicId);
-        return s;
+    public Subtask createSubtask(Subtask subtask) {
+        int parentEpicId = subtask.getEpicId();
+
+        if (!epics.containsKey(parentEpicId)) {
+            return null;
+        }
+
+        if (subtask.getId() == parentEpicId) {
+            return null;
+        }
+
+        int subtaskId = generateId();
+        subtask.setId(subtaskId);
+        subtasks.put(subtaskId, subtask);
+
+        Epic parentEpic = epics.get(parentEpicId);
+        parentEpic.addSubtaskId(subtaskId);
+
+        recalcEpicStatus(parentEpicId);
+
+        return subtask;
     }
+
 
     public Subtask getSubtaskById(int id) {
         InMemoryHistoryManager historyManager = new InMemoryHistoryManager();
