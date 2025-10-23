@@ -243,20 +243,38 @@ class InMemoryTaskManagerTest {
 
     @Test
     void epicStatusShouldRecalculate() {
-        InMemoryTaskManager manager = new InMemoryTaskManager();
-        Epic epic = manager.createEpic(new Epic("e", "d"));
-        Subtask s1 = manager.createSubtask(new Subtask("s1", TaskStatus.NEW, "d1", epic.getId()));
-        Subtask s2 = manager.createSubtask(new Subtask("s2", TaskStatus.NEW, "d2", epic.getId()));
-        assertEquals(TaskStatus.NEW, manager.getEpicById(epic.getId()).getTaskStatus());
+        InMemoryTaskManager taskManager = new InMemoryTaskManager();
+        Epic testEpic = taskManager.createEpic(new Epic("Epic", "Description"));
 
-        s1.setTaskStatus(TaskStatus.DONE);
-        manager.updateSubtask(s1);
-        assertEquals(TaskStatus.IN_PROGRESS, manager.getEpicById(epic.getId()).getTaskStatus());
+        Subtask firstSubtask = taskManager.createSubtask(
+                new Subtask("Subtask 1", TaskStatus.NEW, "Description 1", testEpic.getId())
+        );
+        Subtask secondSubtask = taskManager.createSubtask(
+                new Subtask("Subtask 2", TaskStatus.NEW, "Description 2", testEpic.getId())
+        );
 
-        s2.setTaskStatus(TaskStatus.DONE);
-        manager.updateSubtask(s2);
-        assertEquals(TaskStatus.DONE, manager.getEpicById(epic.getId()).getTaskStatus());
+        assertEquals(
+                TaskStatus.NEW,
+                taskManager.getEpicById(testEpic.getId()).getTaskStatus()
+        );
+
+        firstSubtask.setTaskStatus(TaskStatus.DONE);
+        taskManager.updateSubtask(firstSubtask);
+
+        assertEquals(
+                TaskStatus.IN_PROGRESS,
+                taskManager.getEpicById(testEpic.getId()).getTaskStatus()
+        );
+
+        secondSubtask.setTaskStatus(TaskStatus.DONE);
+        taskManager.updateSubtask(secondSubtask);
+
+        assertEquals(
+                TaskStatus.DONE,
+                taskManager.getEpicById(testEpic.getId()).getTaskStatus()
+        );
     }
+
 
     @Test
     void epicCannotBeOwnSubtask() {
