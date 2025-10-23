@@ -3,6 +3,7 @@ package tasksTest;
 import tasks.Task;
 import tasks.TaskStatus;
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class TaskTest {
@@ -11,6 +12,7 @@ public class TaskTest {
         Task task = new Task("title", TaskStatus.NEW, "description");
         assertEquals("title", task.getTitle());
     }
+
     @Test
     public void setTitle() {
         Task task = new Task("title", TaskStatus.NEW, "description");
@@ -31,6 +33,7 @@ public class TaskTest {
         Task task = new Task("title", TaskStatus.NEW, "description");
         assertEquals("description", task.getDescription());
     }
+
     @Test
     public void setDescription() {
         Task task = new Task("title", TaskStatus.NEW, "description");

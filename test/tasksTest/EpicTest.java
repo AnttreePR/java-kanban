@@ -23,6 +23,7 @@ public class EpicTest {
         assertEquals(1, epic.getSubtaskIds().size());
         assertTrue(epic.getSubtaskIds().contains(100));
     }
+
     @Test
     public void shouldClearSubtaskIds() {
         Epic epic = new Epic("title", "description");

@@ -2,7 +2,7 @@ package tasks;
 
 import java.util.LinkedHashSet;
 
-public class Epic extends Task{
+public class Epic extends Task {
     private LinkedHashSet<Integer> subtaskIds;
 
     public Epic(String title, String description) {

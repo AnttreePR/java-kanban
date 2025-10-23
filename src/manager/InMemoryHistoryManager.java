@@ -12,7 +12,9 @@ public class InMemoryHistoryManager implements HistoryManager {
 
 
     public void add(Task task) {
-        if (task == null) {return;}
+        if (task == null) {
+            return;
+        }
 
         if (history.containsKey(task.getId())) {
             removeNode(history.get(task.getId()));
@@ -77,7 +79,7 @@ public class InMemoryHistoryManager implements HistoryManager {
         Node prev;
         Node next;
 
-        Node(Node prev, Task data,  Node next) {
+        Node(Node prev, Task data, Node next) {
             this.prev = prev;
             this.next = next;
             this.data = data;

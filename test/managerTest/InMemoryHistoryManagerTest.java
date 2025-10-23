@@ -44,6 +44,7 @@ public class InMemoryHistoryManagerTest {
         history.add(null);
         assertTrue(history.getHistory().isEmpty());
     }
+
     @Test
     void shouldRemoveTaskFromHistoryById() {
         history.add(task1);
@@ -70,6 +71,7 @@ public class InMemoryHistoryManagerTest {
         assertEquals(3, result.size());
         assertEquals(List.of(task2, task3, task1), result);
     }
+
     @Test
     void shouldReturnEmptyListIfNoHistory() {
         assertTrue(history.getHistory().isEmpty());
