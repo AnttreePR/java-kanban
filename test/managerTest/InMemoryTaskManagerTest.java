@@ -273,36 +273,5 @@ class InMemoryTaskManagerTest {
         assertNull(manager.createSubtask(sub));
     }
 
-//    @Test
-//    void historyShouldKeepLast10Tasks() {
-//        InMemoryTaskManager manager = new InMemoryTaskManager();
-//
-//        assertEquals(0, manager.getHistory().size());
-//
-//        Task t = new Task("t", TaskStatus.NEW, "d");
-//        Task t2 = new Task("t2", TaskStatus.NEW, "d");
-//
-//        manager.addToHistory(t);
-//        assertEquals(1, manager.getHistory().size());
-//
-//        for (int i = 0; i < 9; i++) {
-//            manager.addToHistory(t);
-//        }
-//        assertEquals(10, manager.getHistory().size());
-//        assertEquals(t, manager.getHistory().get(0));
-//
-//        manager.addToHistory(t2);
-//        assertEquals(t2, manager.getHistory().get(0));
-//        assertEquals(10, manager.getHistory().size());
-//    }
-//
-//    @Test
-//    void getHistoryShouldReturnHistory() {
-//        InMemoryTaskManager manager = new InMemoryTaskManager();
-//        assertEquals(manager.getHistory().size(), 0);
-//        Task t = new Task("t", TaskStatus.NEW, "d");
-//        manager.addToHistory(t);
-//        assertEquals(manager.getHistory().size(), 1);
-//
-//    }
+
 }
