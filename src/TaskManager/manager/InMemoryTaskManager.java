@@ -1,9 +1,10 @@
-package manager;
+package TaskManager.manager;
 
-import tasks.Epic;
-import tasks.Subtask;
-import tasks.Task;
-import tasks.TaskStatus;
+import TaskManager.api.manager.TaskManager;
+import TaskManager.tasks.Subtask;
+import TaskManager.tasks.Task;
+import TaskManager.tasks.TaskStatus;
+import TaskManager.tasks.Epic;
 
 import java.util.HashMap;
 import java.util.ArrayList;
@@ -11,10 +12,10 @@ import java.util.LinkedHashSet;
 
 
 public class InMemoryTaskManager implements TaskManager {
-    private final HashMap<Integer, Task> tasks = new HashMap<>();
-    private final HashMap<Integer, Epic> epics = new HashMap<>();
-    private final HashMap<Integer, Subtask> subtasks = new HashMap<>();
-    private int nextId = 1;
+    protected final HashMap<Integer, Task> tasks = new HashMap<>();
+    protected final HashMap<Integer, Epic> epics = new HashMap<>();
+    protected final HashMap<Integer, Subtask> subtasks = new HashMap<>();
+    protected int nextId = 1;
 
     private int generateId() {
         return nextId++;

@@ -1,0 +1,5 @@
+id,type,name,status,description,epic
+1,TASK,FB: Задача A,NEW,Сохранится в файл,
+2,EPIC,FB: Эпик A,IN_PROGRESS,Эпик для файла,
+3,SUBTASK,FB: Сабтаск A1,IN_PROGRESS,внутри эпика A,2
+

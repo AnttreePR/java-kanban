@@ -1,9 +1,9 @@
-package manager;
+package TaskManager.api.manager;
 
-import tasks.Epic;
-import tasks.Subtask;
-import tasks.Task;
-import tasks.TaskStatus;
+import TaskManager.tasks.Epic;
+import TaskManager.tasks.Subtask;
+import TaskManager.tasks.Task;
+import TaskManager.tasks.TaskStatus;
 
 import java.util.ArrayList;
 
