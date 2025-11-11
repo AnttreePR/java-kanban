@@ -14,7 +14,10 @@ import java.nio.file.Path;
 public class FileBackedTaskManager extends InMemoryTaskManager {
 
     private final Path storage;
-    public FileBackedTaskManager(Path storage) { this.storage = storage; }
+
+    public FileBackedTaskManager(Path storage) {
+        this.storage = storage;
+    }
 
     //tasks
     @Override
@@ -134,7 +137,7 @@ public class FileBackedTaskManager extends InMemoryTaskManager {
     }
 
     public void loadFromFile(File file) {
-        try (var reader = new BufferedReader(new FileReader(file)) )  {
+        try (var reader = new BufferedReader(new FileReader(file))) {
             reader.readLine(); // пропускаем заголовок
             String line;
             while ((line = reader.readLine()) != null && !line.isEmpty()) {
