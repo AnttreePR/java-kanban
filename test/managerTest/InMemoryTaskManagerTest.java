@@ -4,11 +4,11 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import TaskManager.manager.InMemoryTaskManager;
-import TaskManager.tasks.Epic;
-import TaskManager.tasks.Subtask;
-import TaskManager.tasks.Task;
-import TaskManager.tasks.TaskStatus;
+import taskManager.manager.InMemoryTaskManager;
+import taskManager.tasks.Epic;
+import taskManager.tasks.Subtask;
+import taskManager.tasks.Task;
+import taskManager.tasks.TaskStatus;
 import org.junit.jupiter.api.Test;
 
 

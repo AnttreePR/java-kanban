@@ -1,7 +1,7 @@
 package tasksTest;
 
-import TaskManager.tasks.Subtask;
-import TaskManager.tasks.TaskStatus;
+import taskManager.tasks.Subtask;
+import taskManager.tasks.TaskStatus;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

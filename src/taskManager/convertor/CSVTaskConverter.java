@@ -1,6 +1,6 @@
-package TaskManager.convertor;
+package taskManager.convertor;
 
-import TaskManager.tasks.*;
+import taskManager.tasks.*;
 
 public class CSVTaskConverter {
 

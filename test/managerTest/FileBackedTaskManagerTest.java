@@ -1,7 +1,7 @@
 package managerTest;
 
-import TaskManager.manager.FileBackedTaskManager;
-import TaskManager.tasks.*;
+import taskManager.manager.FileBackedTaskManager;
+import taskManager.tasks.*;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;

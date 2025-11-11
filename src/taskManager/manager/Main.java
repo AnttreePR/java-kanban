@@ -1,13 +1,9 @@
-package TaskManager.manager;
+package taskManager.manager;
 
-import TaskManager.convertor.CSVTaskConverter;
-import TaskManager.tasks.Task;
-import TaskManager.tasks.TaskStatus;
-import TaskManager.tasks.Epic;
-import TaskManager.tasks.Subtask;
-
-import java.io.File;
-import java.nio.file.Path;
+import taskManager.tasks.Task;
+import taskManager.tasks.TaskStatus;
+import taskManager.tasks.Epic;
+import taskManager.tasks.Subtask;
 
 public class Main {
 
@@ -89,7 +85,7 @@ public class Main {
 
         System.out.println("\n=== Демонстрация FileBackedTaskManager ===");
 
-        java.nio.file.Path storagePath = java.nio.file.Path.of("src", "TaskManager", "data", "tasks.csv");
+        java.nio.file.Path storagePath = java.nio.file.Path.of("src", "taskManager", "data", "tasks.csv");
         java.io.File storageFile = storagePath.toFile();
 
         FileBackedTaskManager fb = new FileBackedTaskManager(storagePath);

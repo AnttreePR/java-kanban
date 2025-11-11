@@ -1,4 +1,4 @@
-package TaskManager.tasks;
+package taskManager.tasks;
 
 import java.util.LinkedHashSet;
 

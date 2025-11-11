@@ -1,6 +1,6 @@
-package TaskManager.manager;
+package taskManager.manager;
 
-import TaskManager.api.manager.TaskManager;
+import taskManager.api.manager.TaskManager;
 
 public class Managers {
     public static TaskManager getDefault() {

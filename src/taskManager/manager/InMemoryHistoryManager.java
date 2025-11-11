@@ -1,7 +1,7 @@
-package TaskManager.manager;
+package taskManager.manager;
 
-import TaskManager.api.manager.HistoryManager;
-import TaskManager.tasks.Task;
+import taskManager.api.manager.HistoryManager;
+import taskManager.tasks.Task;
 
 import java.util.*;
 
