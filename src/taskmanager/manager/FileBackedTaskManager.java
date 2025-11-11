@@ -1,9 +1,9 @@
-package taskManager.manager;
+package taskmanager.manager;
 
-import taskManager.convertor.CSVTaskConverter;
-import taskManager.exceptions.ManagerReadException;
-import taskManager.exceptions.ManagerSaveException;
-import taskManager.tasks.*;
+import taskmanager.convertor.CSVTaskConverter;
+import taskmanager.exceptions.ManagerReadException;
+import taskmanager.exceptions.ManagerSaveException;
+import taskmanager.tasks.*;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -14,7 +14,10 @@ import java.nio.file.Path;
 public class FileBackedTaskManager extends InMemoryTaskManager {
 
     private final Path storage;
-    public FileBackedTaskManager(Path storage) { this.storage = storage; }
+
+    public FileBackedTaskManager(Path storage) {
+        this.storage = storage;
+    }
 
     //tasks
     @Override
@@ -134,7 +137,7 @@ public class FileBackedTaskManager extends InMemoryTaskManager {
     }
 
     public void loadFromFile(File file) {
-        try (var reader = new BufferedReader(new FileReader(file)) )  {
+        try (var reader = new BufferedReader(new FileReader(file))) {
             reader.readLine(); // пропускаем заголовок
             String line;
             while ((line = reader.readLine()) != null && !line.isEmpty()) {

@@ -1,10 +1,10 @@
-package taskManager.manager;
+package taskmanager.manager;
 
-import taskManager.api.manager.TaskManager;
-import taskManager.tasks.Subtask;
-import taskManager.tasks.Task;
-import taskManager.tasks.TaskStatus;
-import taskManager.tasks.Epic;
+import taskmanager.api.manager.TaskManager;
+import taskmanager.tasks.Subtask;
+import taskmanager.tasks.Task;
+import taskmanager.tasks.TaskStatus;
+import taskmanager.tasks.Epic;
 
 import java.util.HashMap;
 import java.util.ArrayList;
