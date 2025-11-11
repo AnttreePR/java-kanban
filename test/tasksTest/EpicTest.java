@@ -1,10 +1,10 @@
 package tasksTest;
 
-import taskManager.tasks.Epic;
-import taskManager.tasks.Subtask;
+import taskmanager.tasks.Epic;
+import taskmanager.tasks.Subtask;
 
 import org.junit.jupiter.api.Test;
-import taskManager.tasks.TaskStatus;
+import taskmanager.tasks.TaskStatus;
 
 import static org.junit.jupiter.api.Assertions.*;
 

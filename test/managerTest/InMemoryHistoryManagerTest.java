@@ -1,10 +1,10 @@
 package managerTest;
 
-import taskManager.manager.InMemoryHistoryManager;
+import taskmanager.manager.InMemoryHistoryManager;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import taskManager.tasks.Task;
-import taskManager.tasks.TaskStatus;
+import taskmanager.tasks.Task;
+import taskmanager.tasks.TaskStatus;
 
 import java.util.List;
 
