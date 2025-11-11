@@ -1,9 +1,9 @@
-package manager;
+package taskManager.manager;
 
-import tasks.Epic;
-import tasks.Subtask;
-import tasks.Task;
-import tasks.TaskStatus;
+import taskManager.tasks.Task;
+import taskManager.tasks.TaskStatus;
+import taskManager.tasks.Epic;
+import taskManager.tasks.Subtask;
 
 public class Main {
 
@@ -82,5 +82,38 @@ public class Main {
         for (Task task : historyManager.getHistory()) {
             System.out.println(task);
         }
+
+        System.out.println("\n=== Демонстрация FileBackedTaskManager ===");
+
+        java.nio.file.Path storagePath = java.nio.file.Path.of("src", "taskManager", "data", "tasks.csv");
+        java.io.File storageFile = storagePath.toFile();
+
+        FileBackedTaskManager fb = new FileBackedTaskManager(storagePath);
+
+        if (storageFile.exists() && storageFile.isFile()) {
+            fb.loadFromFile(storageFile);
+            System.out.println("Загружено из файла: ");
+            System.out.println("Задачи: " + fb.getAllTasks());
+            System.out.println("Эпики: " + fb.getAllEpics());
+            System.out.println("Подзадачи: " + fb.getAllSubtasks());
+        }
+
+        Task ft1 = fb.createTask("FB: Задача A", "Сохранится в файл", TaskStatus.NEW);
+        Epic fe1 = fb.createEpic(new Epic("FB: Эпик A", "Эпик для файла"));
+        Subtask fs1 = fb.createSubtask(new Subtask("FB: Сабтаск A1", TaskStatus.IN_PROGRESS, "внутри эпика A", fe1.getId()));
+
+        System.out.println("\nСостояние FileBackedTaskManager (также в CSV):");
+        System.out.println("Задачи: " + fb.getAllTasks());
+        System.out.println("Эпики: " + fb.getAllEpics());
+        System.out.println("Подзадачи: " + fb.getAllSubtasks());
+
+        FileBackedTaskManager fbReloaded = new FileBackedTaskManager(storagePath);
+        fbReloaded.loadFromFile(storageFile);
+
+        System.out.println("\nПосле перезагрузки из CSV:");
+        System.out.println("Задачи: " + fbReloaded.getAllTasks());
+        System.out.println("Эпики: " + fbReloaded.getAllEpics());
+        System.out.println("Подзадачи: " + fbReloaded.getAllSubtasks());
+
     }
 }
