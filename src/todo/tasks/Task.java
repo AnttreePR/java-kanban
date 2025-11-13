@@ -1,4 +1,4 @@
-package taskmanager.tasks;
+package todo.tasks;
 
 public class Task {
     private int id;

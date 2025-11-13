@@ -1,4 +1,4 @@
-package taskmanager.exceptions;
+package todo.exceptions;
 
 public class ManagerReadException extends RuntimeException {
     public ManagerReadException(String message, Throwable cause) {

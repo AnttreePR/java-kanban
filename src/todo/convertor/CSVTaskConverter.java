@@ -1,6 +1,6 @@
-package taskmanager.convertor;
+package todo.convertor;
 
-import taskmanager.tasks.*;
+import todo.tasks.*;
 
 public class CSVTaskConverter {
 

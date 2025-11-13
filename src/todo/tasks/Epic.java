@@ -1,4 +1,4 @@
-package taskmanager.tasks;
+package todo.tasks;
 
 import java.util.LinkedHashSet;
 

@@ -1,7 +1,7 @@
-package taskmanager.manager;
+package todo.manager;
 
-import taskmanager.api.manager.HistoryManager;
-import taskmanager.tasks.Task;
+import todo.api.manager.HistoryManager;
+import todo.tasks.Task;
 
 import java.util.*;
 
