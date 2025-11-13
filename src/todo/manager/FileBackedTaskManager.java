@@ -1,9 +1,9 @@
-package taskmanager.manager;
+package todo.manager;
 
-import taskmanager.convertor.CSVTaskConverter;
-import taskmanager.exceptions.ManagerReadException;
-import taskmanager.exceptions.ManagerSaveException;
-import taskmanager.tasks.*;
+import todo.convertor.CSVTaskConverter;
+import todo.exceptions.ManagerReadException;
+import todo.exceptions.ManagerSaveException;
+import todo.tasks.*;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;

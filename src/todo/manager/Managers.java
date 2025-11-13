@@ -1,6 +1,6 @@
-package taskmanager.manager;
+package todo.manager;
 
-import taskmanager.api.manager.TaskManager;
+import todo.api.manager.TaskManager;
 
 public class Managers {
     public static TaskManager getDefault() {

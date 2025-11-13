@@ -1,9 +1,9 @@
-package taskmanager.api.manager;
+package todo.api.manager;
 
-import taskmanager.tasks.Epic;
-import taskmanager.tasks.Subtask;
-import taskmanager.tasks.Task;
-import taskmanager.tasks.TaskStatus;
+import todo.tasks.Epic;
+import todo.tasks.Subtask;
+import todo.tasks.Task;
+import todo.tasks.TaskStatus;
 
 import java.util.ArrayList;
 

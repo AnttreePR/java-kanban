@@ -1,9 +1,9 @@
-package taskmanager.manager;
+package todo.manager;
 
-import taskmanager.tasks.Task;
-import taskmanager.tasks.TaskStatus;
-import taskmanager.tasks.Epic;
-import taskmanager.tasks.Subtask;
+import todo.tasks.Task;
+import todo.tasks.TaskStatus;
+import todo.tasks.Epic;
+import todo.tasks.Subtask;
 
 public class Main {
 
@@ -85,35 +85,35 @@ public class Main {
 
         System.out.println("\n=== Демонстрация FileBackedTaskManager ===");
 
-        java.nio.file.Path storagePath = java.nio.file.Path.of("src", "taskmanager", "data", "tasks.csv");
+        java.nio.file.Path storagePath = java.nio.file.Path.of("src", "todo", "data", "tasks.csv");
         java.io.File storageFile = storagePath.toFile();
 
-        FileBackedTaskManager fb = new FileBackedTaskManager(storagePath);
+        FileBackedTaskManager fileManager = new FileBackedTaskManager(storagePath);
 
         if (storageFile.exists() && storageFile.isFile()) {
-            fb.loadFromFile(storageFile);
+            fileManager.loadFromFile(storageFile);
             System.out.println("Загружено из файла: ");
-            System.out.println("Задачи: " + fb.getAllTasks());
-            System.out.println("Эпики: " + fb.getAllEpics());
-            System.out.println("Подзадачи: " + fb.getAllSubtasks());
+            System.out.println("Задачи: " + fileManager.getAllTasks());
+            System.out.println("Эпики: " + fileManager.getAllEpics());
+            System.out.println("Подзадачи: " + fileManager.getAllSubtasks());
         }
 
-        Task ft1 = fb.createTask("FB: Задача A", "Сохранится в файл", TaskStatus.NEW);
-        Epic fe1 = fb.createEpic(new Epic("FB: Эпик A", "Эпик для файла"));
-        Subtask fs1 = fb.createSubtask(new Subtask("FB: Сабтаск A1", TaskStatus.IN_PROGRESS, "внутри эпика A", fe1.getId()));
+        Task fileTask1 = fileManager.createTask("fileManager: Задача A", "Сохранится в файл", TaskStatus.NEW);
+        Epic fileEpic1 = fileManager.createEpic(new Epic("fileManager: Эпик A", "Эпик для файла"));
+        Subtask fileSubtask1 = fileManager.createSubtask(new Subtask("fileManager: Сабтаск A1", TaskStatus.IN_PROGRESS, "внутри эпика A", fileEpic1.getId()));
 
         System.out.println("\nСостояние FileBackedTaskManager (также в CSV):");
-        System.out.println("Задачи: " + fb.getAllTasks());
-        System.out.println("Эпики: " + fb.getAllEpics());
-        System.out.println("Подзадачи: " + fb.getAllSubtasks());
+        System.out.println("Задачи: " + fileManager.getAllTasks());
+        System.out.println("Эпики: " + fileManager.getAllEpics());
+        System.out.println("Подзадачи: " + fileManager.getAllSubtasks());
 
-        FileBackedTaskManager fbReloaded = new FileBackedTaskManager(storagePath);
-        fbReloaded.loadFromFile(storageFile);
+        FileBackedTaskManager fileManagerReloaded = new FileBackedTaskManager(storagePath);
+        fileManagerReloaded.loadFromFile(storageFile);
 
         System.out.println("\nПосле перезагрузки из CSV:");
-        System.out.println("Задачи: " + fbReloaded.getAllTasks());
-        System.out.println("Эпики: " + fbReloaded.getAllEpics());
-        System.out.println("Подзадачи: " + fbReloaded.getAllSubtasks());
+        System.out.println("Задачи: " + fileManagerReloaded.getAllTasks());
+        System.out.println("Эпики: " + fileManagerReloaded.getAllEpics());
+        System.out.println("Подзадачи: " + fileManagerReloaded.getAllSubtasks());
 
     }
 }

@@ -1,6 +1,6 @@
-package taskmanager.api.manager;
+package todo.api.manager;
 
-import taskmanager.tasks.Task;
+import todo.tasks.Task;
 
 import java.util.List;
 
